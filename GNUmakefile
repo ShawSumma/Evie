@@ -8,7 +8,7 @@ Cpp_Objects = $(patsubst %.cpp,out/%.o,$(Cpp_Sources))
 default: Evie
 
 Debuggarna debug:
-	$(MAKE) -Bj CFLAGS="$(CFLAGS) -g3"
+	$(MAKE) -Bj CFLAGS="$(CFLAGS) -g3" LDFLAGS="$(LDFLAGS) -g"
 
 Evie evie: $(Cpp_Objects)
 	$(CXX) --std=c++2a $^ -o Evie -ldl -lstdc++ -lcurl -lpthread $(LDFLAGS)
